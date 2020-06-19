@@ -1,5 +1,28 @@
 # Adversarial Machine Learning
+## 作法
+首先需要安裝相對應的 tensorflow , Keras 版本
+```
+$ pip install tensorflow==1.15
+$ pip install keras==2.3.1
+```
+使用 fgsm 做攻擊手法，透過執行 `attack.py` 去產生攻擊的圖片
+```
+$ python3 attack.py cat1
+...
+```
+所產生的結果 : 
 
+| 攻擊前 | noise | 攻擊後 |
+| -------- | -------- | -------- |
+| ![image](cat1.jpg) | ![image](cat1noise.png)  | ![image](cat1adv.png) |
+| ![image](cat2.jpg) | ![image](cat2noise.png)  | ![image](cat2adv.png) |
+| ![image](dog1.jpg) | ![image](dog1noise.png)  | ![image](dog1adv.png) |
+
+準確率預測
+![image](attack_predict.png)
+
+reference : https://github.com/soumyac1999/FGSM-Keras
+## lab require
 The widespread use of artificial intelligence (AI) in today's computer systems incurs a new attack vector for computer security, as the AI can be fooled to take incorrect or even unsafe actions.
 
 In this mini-project, you are given an image classifier (<em>predict.py</em>), which is pre-trained to recognize dogs and cats. After installing python3 and [keras](https://keras.io/), you can use the following command with filenames of the images you want to classify as the arguments.
